@@ -10,7 +10,7 @@ stage('Checkout') {
     steps {
         git branch: 'main', url: 'https://github.com/Devansha-Awasthi/sample-maven-project.git'
     }
-}
+
 
         stage('Build') {
             steps {
