@@ -2,15 +2,17 @@ pipeline {
     agent any
 
     tools {
-        maven 'maven'
-        jdk 'jdk'
-    }
-    
-stage('Checkout') {
-    steps {
-        git branch: 'main', url: 'https://github.com/Devansha-Awasthi/sample-maven-project.git'
+        maven 'Maven'
+        jdk 'JDK'
     }
 
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Devansha-Awasthi/sample-maven-project.git'
+            }
+        }
 
         stage('Build') {
             steps {
@@ -23,5 +25,6 @@ stage('Checkout') {
                 bat 'java -jar target/*.jar'
             }
         }
+
     }
 }
