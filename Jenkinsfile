@@ -5,13 +5,12 @@ pipeline {
         maven 'maven'
         jdk 'jdk'
     }
-
-    stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/Devansha-Awasthi/sample-maven-project.git'
-            }
-        }
+    
+stage('Checkout') {
+    steps {
+        git branch: 'main', url: 'https://github.com/Devansha-Awasthi/sample-maven-project.git'
+    }
+}
 
         stage('Build') {
             steps {
