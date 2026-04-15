@@ -15,13 +15,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
 
         stage('Run') {
             steps {
-                sh 'java -jar target/*.jar'
+                bat 'java -jar target/*.jar'
             }
         }
     }
